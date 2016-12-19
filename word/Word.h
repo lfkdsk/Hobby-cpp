@@ -13,7 +13,7 @@ class Word : public Token {
 private:
     std::string lexeme = "";
 public:
-    Word(std::string &lexeme, int tag)
+    Word(const std::string &lexeme, int tag)
             : Token(tag), lexeme(lexeme) {
 
     }
