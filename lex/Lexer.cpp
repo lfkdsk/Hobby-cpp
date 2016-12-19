@@ -44,7 +44,6 @@ Lexer::Lexer() {
     addWordToTable(Char);
     addWordToTable(Dou);
     addWordToTable(Bool);
-
 }
 
 Lexer::~Lexer() {

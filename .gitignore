@@ -79,3 +79,15 @@ gen### C++ template
 *.dSYM/
 *.su
 
+.gitignore
+.idea/
+CMakeLists.txt
+Id/
+cmake-build-debug/
+exception/
+lex/
+lfkdsk.hy
+main.cpp
+parser/
+utils/
+word/

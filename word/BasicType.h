@@ -12,16 +12,15 @@ class BasicType : public Word {
 private:
     int wordWidth = 0;
 public:
-    BasicType(const std::string &lexeme, int tag, int width) : Word(lexeme, tag) {
-        this->wordWidth = width;
+    BasicType(const std::string &lexeme, int tag, int width)
+            : Word(lexeme, tag), wordWidth(width) {
     }
 
-
-    int getWordWidth() const {
+    inline int getWordWidth() const {
         return wordWidth;
     }
 
-    void setWordWidth(int wordWidth) {
+    inline void setWordWidth(int wordWidth) {
         BasicType::wordWidth = wordWidth;
     }
 };

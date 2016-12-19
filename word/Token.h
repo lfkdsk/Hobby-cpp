@@ -6,16 +6,15 @@
 #define HOBBY_TOKEN_H
 
 #include "Tag.h"
+
 class Token {
 private:
     int tagNum;
 
 public:
-    Token(int tag) {
-        this->tagNum = tag;
-    }
+    Token(int tag) : tagNum(tag) {}
 
-    ~Token(){
+    ~Token() {
 
     }
 
