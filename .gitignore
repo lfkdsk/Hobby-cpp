@@ -82,12 +82,4 @@ gen### C++ template
 .gitignore
 .idea/
 CMakeLists.txt
-Id/
 cmake-build-debug/
-exception/
-lex/
-lfkdsk.hy
-main.cpp
-parser/
-utils/
-word/

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+using Hobby::Lex::Lexer;
+
 using std::cout;
 using std::endl;
 

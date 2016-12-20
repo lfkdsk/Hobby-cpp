@@ -7,77 +7,75 @@
 
 #include <iostream>
 #include <fstream>
+#include "map"
 #include "../word/Word.h"
 #include "../word/BasicType.h"
-#include "map"
-#include <cassert>
-#include "../Id/Integer.h"
-#include "../Id/Real.h"
-#include "../Id/Double.h"
 #include "../utils/Printer.h"
+#include <cassert>
 #include <cctype>
-#include "../Id/Character.h"
 #include <cmath>
+#include "../id/type.hpp"
+#include "../word/Tag.h"
 
+namespace Hobby {
+    namespace Lex {
+        class Lexer {
+        private:
+            // 记录行号
+            int lineNumber = 1;
+            // 预读字符
+            char peekChar = ' ';
+            // 单词表
+            map<const std::string, Word *> word_table;
 
-using namespace std;
+            ifstream filein;
 
+            Printer printer;
 
-class Lexer {
-private:
-    // 记录行号
-    int lineNumber = 1;
-    // 预读字符
-    char peekChar = ' ';
-    // 单词表
-    map<const std::string, Word *> word_table;
+        public:
+            Lexer();
 
-    ifstream filein;
+            ~Lexer();
 
-    Printer printer;
+            void openFile(const std::string &filename);
 
-public:
-    Lexer();
+            void closeFile();
 
-    ~Lexer();
+            // 添加单词
+            void addWordToTable(Word *word);
 
-    void openFile(const std::string &filename);
+            void printWordTable();
 
-    void closeFile();
+            void nextChar();
 
-    // 添加单词
-    void addWordToTable(Word *word);
+            bool isEqual(const char ch);
 
-    void printWordTable();
+            bool isOneWord(const char ch);
 
-    void nextChar();
+            Token *nextToken();
 
-    bool isEqual(const char ch);
+            Token *handleDigit();
 
-    bool isOneWord(const char ch);
+            Token *handleID();
 
-    Token *nextToken();
+            Token *handleBool();
 
-    Token *handleDigit();
+            Token *handleChar();
 
-    Token *handleID();
+            void handleInComment();
 
-    Token *handleBool();
+            int getLineNumber() const {
+                return lineNumber;
+            }
 
-    Token *handleChar();
+            char getPeekChar() const {
+                return peekChar;
+            }
 
-    void handleInComment();
-
-    int getLineNumber() const {
-        return lineNumber;
+            bool isSupportFormat(string filename);
+        };
     }
-
-    char getPeekChar() const {
-        return peekChar;
-    }
-
-    bool isSupportFormat(string filename);
-};
+}
 
 
 #endif //HOBBY_LEXER_H
