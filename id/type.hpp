@@ -1,0 +1,17 @@
+//
+// Created by 刘丰恺 on 2016/12/20.
+//
+
+#ifndef HOBBY_TYPE_HPP
+#define HOBBY_TYPE_HPP
+
+///////////////////////////////////////////////////////////////////////////
+// include all inner type
+///////////////////////////////////////////////////////////////////////////
+
+#include "Integer.h"
+#include "Double.h"
+#include "Real.h"
+#include "Character.h"
+
+#endif //HOBBY_TYPE_HPP
